@@ -14,8 +14,9 @@ Configures [sysfs](http://en.wikipedia.org/wiki/Sysfs) kernel subsystem control 
 
 * `sysfs` - The default no-op recipe.
 * Predefined parameters:
-* `sysfs::nic_txqueuelen` - Sets network cards' tx queue length to higher value.
+* `sysfs::nic_tuning` - Sets tx queue length to higher value and increase rps queue.
 * `sysfs::tsc_clocksource` - Sets clocksource to tsc.
+* `sysfs::disable_thp` - Disables transparent huge pages.
 
 ## Usage
 * name: the sysfs parameter

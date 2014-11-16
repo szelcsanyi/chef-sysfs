@@ -4,8 +4,8 @@
 #
 # Copyright 2014, Gabor Szelcsanyi <szelcsanyi.gabor@gmail.com>
 
-sysfs_parameter 'devices/system/clocksource/clocksource0/current_clocksource' do
-  comment 'Set clocksource to tsc'
-  value 'tsc'
+sysfs_parameter '/sys/kernel/mm/transparent_hugepage/enabled' do
+  comment 'Disable transparent huge pages'
+  value 'never'
   immediately true
 end
