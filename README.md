@@ -15,6 +15,7 @@ Configures [sysfs](http://en.wikipedia.org/wiki/Sysfs) kernel subsystem control 
 * `sysfs` - The default no-op recipe.
 * Predefined parameters:
 * `sysfs::nic_tuning` - Sets tx queue length to higher value and increase rps queue.
+* `sysfs::disk_tuning` - Set io scheduler and rq affinity.
 * `sysfs::tsc_clocksource` - Sets clocksource to tsc.
 * `sysfs::disable_thp` - Disables transparent huge pages.
 
