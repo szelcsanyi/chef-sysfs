@@ -6,10 +6,10 @@
 
 interfaces = node['network']['interfaces'].select { |i| i =~ /^eth/ }
 
-cpumask = ( 2 ** node['cpu']['total'] -1 )
+cpumask = (2**node['cpu']['total'] - 1)
 if cpumask > 0
-  rxmask = ( cpumask >> ( node['cpu']['total']/2) ) & cpumask
-  txmask = ( cpumask << ( node['cpu']['total']/2) ) & cpumask
+  rxmask = (cpumask >> (node['cpu']['total'] / 2)) & cpumask
+  txmask = (cpumask << (node['cpu']['total'] / 2)) & cpumask
 end
 
 interfaces.each do |interface|

@@ -7,7 +7,7 @@
 disks = node['block_device'].select { |d| d =~ /^xvd/ }
 disks.each do |disk|
 
-  if node["virtualization"].any? and node['virtualization']['role'] == 'guest' then
+  if node['virtualization'].any? && node['virtualization']['role'] == 'guest'
     sysfs_parameter "block/#{ disk.at(0) }/queue/scheduler" do
       comment "Set disk scheduler to noop on #{ disk.at(0) }"
       value 'noop'
