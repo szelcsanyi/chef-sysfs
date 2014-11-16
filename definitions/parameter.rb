@@ -29,7 +29,7 @@ define :sysfs_parameter, comment: '', immediately: false do
   if params[:immediately]
     r = execute "Set sysfs value for #{params[:name]} to #{params[:value]}" do
       Chef::Log.info("Sysfs: Setting #{params[:name]} to #{params[:value]}")
-      command "/bin/echo #{params[:value]} > '#{params[:name]}'"
+      command "/bin/echo #{params[:value]} > #{paramfile}"
       action :nothing
       only_if do
         File.exist?(paramfile) && File.read(paramfile).strip != params[:value]
