@@ -6,7 +6,7 @@
 #-----------------------#
 
 <% @parameters.each do |parameter| -%>
-<% unless parameter[:comment].empty? %>#<%= parameter[:comment] %>
+<% unless parameter[:comment].empty? %># <%= parameter[:comment] %>
 <% end %><%= parameter[:name] %> = <%= parameter[:value] %>
 <% end -%>
 
