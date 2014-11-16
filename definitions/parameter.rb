@@ -11,7 +11,7 @@ define :sysfs_parameter, comment: '', immediately: false do
       owner 'root'
       group 'root'
       source 'etc/sysfs.conf.erb'
-      cookbook 'sysctl'
+      cookbook 'sysfs'
       variables(parameters: [])
     end
   end
