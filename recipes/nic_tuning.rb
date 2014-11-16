@@ -7,7 +7,7 @@
 interfaces = node['network']['interfaces'].select { |i| i =~ /^eth/ }
 
 cpumask = ( 2 ** node['cpu']['total'] -1 )
-if cpumask
+if cpumask > 0
   rxmask = ( cpumask >> ( node['cpu']['total']/2) ) & cpumask
   txmask = ( cpumask << ( node['cpu']['total']/2) ) & cpumask
 end
@@ -19,14 +19,14 @@ interfaces.each do |interface|
     value '5000'
   end
 
-  if cpumask
-    sysfs_parameter "class/net/#{interface.at(0)}/queues/rx-0/rps_cpus" do
-      comment "CPU mask for Receive Packet Steering on #{interface.at(0)}"
+  if cpumask > 0
+    sysfs_parameter "class/net/#{ interface.at(0) }/queues/rx-0/rps_cpus" do
+      comment "CPU mask for Receive Packet Steering on #{ interface.at(0) }"
       value rxmask.to_s(16)
     end
 
-    sysfs_parameter "class/net/#{interface.at(0)}/queues/tx-0/xps_cpus" do
-      comment "CPU mask for Transmit Packet Steering on #{interface.at(0)}"
+    sysfs_parameter "class/net/#{ interface.at(0) }/queues/tx-0/xps_cpus" do
+      comment "CPU mask for Transmit Packet Steering on #{ interface.at(0) }"
       value txmask.to_s(16)
     end
   end
