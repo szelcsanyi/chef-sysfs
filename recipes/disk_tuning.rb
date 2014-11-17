@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: sysfs
-# Recipe:: tsc_clocksource
+# Recipe:: disk_tuning
 #
 # Copyright 2014, Gabor Szelcsanyi <szelcsanyi.gabor@gmail.com>
 

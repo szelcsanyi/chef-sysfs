@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: sysfs
-# Recipe:: tsc_clocksource
+# Recipe:: nic_tuning
 #
 # Copyright 2014, Gabor Szelcsanyi <szelcsanyi.gabor@gmail.com>
 

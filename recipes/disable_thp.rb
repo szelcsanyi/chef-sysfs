@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: sysfs
-# Recipe:: tsc_clocksource
+# Recipe:: disable_thp
 #
 # Copyright 2014, Gabor Szelcsanyi <szelcsanyi.gabor@gmail.com>
 
