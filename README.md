@@ -1,5 +1,6 @@
 # sysfs cookbook
 [![Build Status](https://travis-ci.org/szelcsanyi/chef-sysfs.svg?branch=master)](https://travis-ci.org/szelcsanyi/chef-sysfs)
+[![security](https://hakiri.io/github/szelcsanyi/chef-sysfs/master.svg)](https://hakiri.io/github/szelcsanyi/chef-sysfs/master)
 
 ## Description
 
