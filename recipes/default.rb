@@ -5,7 +5,7 @@
 # Copyright 2014, Gabor Szelcsanyi <szelcsanyi.gabor@gmail.com>
 
 package 'sysfsutils' do
-  action :upgrade
+  action :install
 end
 
 service 'sysfsutils' do
