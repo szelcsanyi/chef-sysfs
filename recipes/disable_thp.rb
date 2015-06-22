@@ -8,3 +8,8 @@ sysfs_parameter 'kernel/mm/transparent_hugepage/enabled' do
   comment 'Disable transparent huge pages'
   value 'never'
 end
+
+sysfs_parameter 'kernel/mm/transparent_hugepage/defrag' do
+  comment 'Disable transparent huge pages defrag'
+  value 'never'
+end
