@@ -1,10 +1,10 @@
 #
-# Cookbook Name:: sysfs
+# Cookbook Name:: L7-sysfs
 # Recipe:: tsc_clocksource
 #
-# Copyright 2014, Gabor Szelcsanyi <szelcsanyi.gabor@gmail.com>
+# Copyright 2015, Gabor Szelcsanyi <szelcsanyi.gabor@gmail.com>
 
-sysfs_parameter 'devices/system/clocksource/clocksource0/current_clocksource' do
+L7_sysfs 'devices/system/clocksource/clocksource0/current_clocksource' do
   comment 'Set clocksource to tsc'
   value 'tsc'
   immediately true

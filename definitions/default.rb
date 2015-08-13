@@ -1,6 +1,6 @@
-# Copyright 2014, Gabor Szelcsanyi <szelcsanyi.gabor@gmail.com>
+# Copyright 2015, Gabor Szelcsanyi <szelcsanyi.gabor@gmail.com>
 
-define :sysfs_parameter, comment: '', immediately: false do
+define :L7_sysfs, comment: '', immediately: false do
 
   t = nil
   begin
@@ -11,7 +11,7 @@ define :sysfs_parameter, comment: '', immediately: false do
       owner 'root'
       group 'root'
       source 'etc/sysfs.conf.erb'
-      cookbook 'sysfs'
+      cookbook 'L7-sysfs'
       variables(parameters: [])
     end
   end

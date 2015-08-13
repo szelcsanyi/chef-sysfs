@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: sysfs
+# Cookbook Name:: L7-sysfs
 # Recipe:: default
 #
-# Copyright 2014, Gabor Szelcsanyi <szelcsanyi.gabor@gmail.com>
+# Copyright 2015, Gabor Szelcsanyi <szelcsanyi.gabor@gmail.com>
 
 package 'sysfsutils' do
   action :install

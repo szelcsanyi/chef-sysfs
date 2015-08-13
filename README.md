@@ -1,6 +1,7 @@
-# sysfs cookbook
+# L7-sysfs cookbook
 [![Build Status](https://travis-ci.org/szelcsanyi/chef-sysfs.svg?branch=master)](https://travis-ci.org/szelcsanyi/chef-sysfs)
 [![security](https://hakiri.io/github/szelcsanyi/chef-sysfs/master.svg)](https://hakiri.io/github/szelcsanyi/chef-sysfs/master)
+[![Cookbook Version](https://img.shields.io/cookbook/v/L7-sysfs.svg?style=flat)](https://supermarket.chef.io/cookbooks/L7-sysfs)
 
 ## Description
 
@@ -8,28 +9,28 @@ Configures [sysfs](http://en.wikipedia.org/wiki/Sysfs) kernel subsystem control 
 
 ## Supported Platforms
 
-* Ubuntu
-* Debian
+* Ubuntu 12.04+
+* Debian 7.0+
 
 ## Recipes
 
-* `sysfs` - The default no-op recipe.
+* `L7-sysfs` - The default no-op recipe.
 * Predefined parameters:
-* `sysfs::nic_tuning` - Sets tx queue length to higher value and increase rps queue.
-* `sysfs::disk_tuning` - Set io scheduler and rq affinity.
-* `sysfs::tsc_clocksource` - Sets clocksource to tsc.
-* `sysfs::disable_thp` - Disables transparent huge pages.
+* `L7-sysfs::nic_tuning` - Sets tx queue length to higher value and increase rps queue.
+* `L7-sysfs::disk_tuning` - Set io scheduler and rq affinity.
+* `L7-sysfs::tsc_clocksource` - Sets clocksource to tsc.
+* `L7-sysfs::disable_thp` - Disables transparent huge pages.
 
 ## Usage
-* name: the sysfs parameter
-* comment: optional string for identification
-* value: must be set to proper value
-* immediately: (true/false) set value at runtime or at the end of chef run
+* name: The sysfs parameter.
+* comment: Optional string for identification.
+* value: Must be set to proper value.
+* immediately: Optional true/false. Sets value at runtime or at the end of chef run.
 
 ```ruby
-sysfs_parameter "devices/system/clocksource/clocksource0/current_clocksource" do
-	comment "Set clocksource to tsc"
-	value "tsc"
+L7_sysfs 'devices/system/clocksource/clocksource0/current_clocksource' do
+	comment 'Set clocksource to tsc'
+	value 'tsc'
 	immediately true
 end
 ```
@@ -48,8 +49,8 @@ end
 
 ## License
 
-* Freely distributable and licensed under the [MIT license](http://szelcsanyi.mit-license.org/2014/license.html).
-* Copyright (c) 2014 Gabor Szelcsanyi
+* Freely distributable and licensed under the [MIT license](http://szelcsanyi.mit-license.org/2015/license.html).
+* Copyright (c) 2015 Gabor Szelcsanyi
 
 [![image](https://ga-beacon.appspot.com/UA-56493884-1/chef-sysfs/README.md)](https://github.com/szelcsanyi/chef-sysfs)
 
