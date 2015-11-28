@@ -5,9 +5,8 @@
 # Copyright 2015, Gabor Szelcsanyi <szelcsanyi.gabor@gmail.com>
 
 # Not in openvz guest
-if File.exist?('/proc/vz')
-  return
-end
+return if File.exist?('/proc/vz')
+
 
 interfaces = node['network']['interfaces'].select { |i| i =~ /^eth/ }
 
