@@ -4,6 +4,9 @@
 #
 # Copyright 2015, Gabor Szelcsanyi <szelcsanyi.gabor@gmail.com>
 
+# Not in openvz guest
+return if File.exist?('/proc/vz')
+
 disks = node['block_device'].select { |d| d =~ /^xvd/ }
 disks.each do |disk|
 
