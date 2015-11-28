@@ -4,6 +4,11 @@
 #
 # Copyright 2015, Gabor Szelcsanyi <szelcsanyi.gabor@gmail.com>
 
+# Not in openvz guest
+if File.exist?('/proc/vz')
+  return
+end
+
 interfaces = node['network']['interfaces'].select { |i| i =~ /^eth/ }
 
 cpumask = (2**[node['cpu']['total'], 32].min - 1)

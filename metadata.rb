@@ -4,7 +4,7 @@ license          'MIT'
 description      'Configures sysfs'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 name             'L7-sysfs'
-version          '0.0.5'
+version          '0.0.6'
 source_url       'https://github.com/szelcsanyi/chef-sysfs'
 issues_url       'https://github.com/szelcsanyi/chef-sysfs/issues'
 
