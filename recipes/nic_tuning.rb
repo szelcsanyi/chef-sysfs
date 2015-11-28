@@ -7,7 +7,6 @@
 # Not in openvz guest
 return if File.exist?('/proc/vz')
 
-
 interfaces = node['network']['interfaces'].select { |i| i =~ /^eth/ }
 
 cpumask = (2**[node['cpu']['total'], 32].min - 1)
