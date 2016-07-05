@@ -15,7 +15,7 @@ disks.each do |disk|
       value 'noop'
     end
   elsif File.exist?("/sys/block/#{disk.at(0)}/queue/rotational") &&
-        File.read("/sys/block/#{disk.at(0)}/queue/rotational") == '0'
+        File.read("/sys/block/#{disk.at(0)}/queue/rotational") == "0\n"
     L7_sysfs "block/#{disk.at(0)}/queue/scheduler" do
       comment "Set disk scheduler to deadline on #{disk.at(0)}"
       value 'deadline'
