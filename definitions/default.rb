@@ -1,7 +1,6 @@
 # Copyright 2015, Gabor Szelcsanyi <szelcsanyi.gabor@gmail.com>
 
 define :L7_sysfs, comment: '', immediately: false do
-
   t = nil
   begin
     t = resources(template: '/etc/sysfs.conf')
@@ -37,5 +36,4 @@ define :L7_sysfs, comment: '', immediately: false do
     end
     r.run_action(:run)
   end
-
 end
