@@ -7,7 +7,9 @@
 # Not in openvz guest
 return if File.exist?('/proc/vz')
 
-interfaces = node['network']['interfaces'].select { |i| i =~ /^eth/ }
+interfaces, _info = node['network']['interfaces'].select do |_i, i_info|
+  i_info.include?('encapsulation') && i_info['encapsulation'] == 'Ethernet'
+end
 
 cpumask = (2**[node['cpu']['total'], 32].min - 1)
 if cpumask > 0
