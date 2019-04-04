@@ -2,14 +2,20 @@
 # Cookbook Name:: L7-sysfs
 # Recipe:: disable_thp
 #
-# Copyright 2015, Gabor Szelcsanyi <szelcsanyi.gabor@gmail.com>
+# Disables transparent hugepages
+#
+# Copyright 2019, Gabor Szelcsanyi <szelcsanyi.gabor@gmail.com>
 
-L7_sysfs 'kernel/mm/transparent_hugepage/enabled' do
-  comment 'Disable transparent huge pages'
-  value 'never'
+if File.exist?('/sys/kernel/mm/transparent_hugepage/enabled')
+  L7_sysfs 'kernel/mm/transparent_hugepage/enabled' do
+    comment 'Disable transparent huge pages'
+    value 'never'
+  end
 end
 
-L7_sysfs 'kernel/mm/transparent_hugepage/defrag' do
-  comment 'Disable transparent huge pages defrag'
-  value 'never'
+if File.exist?('/sys/kernel/mm/transparent_hugepage/defrag')
+  L7_sysfs 'kernel/mm/transparent_hugepage/defrag' do
+    comment 'Disable transparent huge pages defrag'
+    value 'never'
+  end
 end
