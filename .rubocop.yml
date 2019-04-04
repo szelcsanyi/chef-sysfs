@@ -4,6 +4,9 @@ LineLength:
     - "**/attributes/*.rb"
     - "**/metadata.rb"
 
+Metrics/BlockLength:
+  Max: 80
+
 SpaceBeforeFirstArg:
   Enabled: false  # too strict about metadata and certain formatting
 
