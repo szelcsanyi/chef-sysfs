@@ -10,7 +10,7 @@ return if File.exist?('/proc/vz')
 disks = node['block_device'].select { |d| d =~ /^x?(v|s)d[a-z]/ }
 disks.each do |disk|
   if node['virtualization'].any? && node['virtualization']['role'] == 'guest'
-    if File.readlines("/sys/block/#{disk.at(0)}/queue/scheduler").grep(/noop/)!empty?
+    if File.readlines("/sys/block/#{disk.at(0)}/queue/scheduler").grep(/noop/).!empty?
       L7_sysfs "block/#{disk.at(0)}/queue/scheduler" do
         comment "Set disk scheduler to noop on #{disk.at(0)}"
         value 'noop'
